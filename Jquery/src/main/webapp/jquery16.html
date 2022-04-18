@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 스크립트 -->
+<!-- <script src="jquery-3.6.0.min (1).js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<input type="text" name="" id="txt" class="">
+<input type="radio" name="ra" id="ra1" class="">
+<input type="radio" name="ra" id="ra2" class="">
+<input type="checkbox" name="" id="cb" class="">
+<select name="" id="sel" class="">
+	<option value="op1">옵션1</option>
+	<option value="op2">옵션2</option>
+	<option value="op3">옵션3</option>
+</select>
+<select id="subsel"></select>
+
+<button id="submit">값체크</button>
+
+<!-- 스크립트 -->
+<script>
+$(document).ready(function (){
+	$('sel option:eq(1)').prop('selected', true);
+	
+	$('#sel').change(function(){
+		$('#subsel').empty();
+		if($('#sel').val() == 'op2') {
+			$('#subsel').append('<option>서브Select</option>');
+	} else if($('#sel').val() == 'op3') {
+			$('#subsel').append('<option>서브3Select</option>');
+	}		
+		console.log('asdf');
+	});
+	
+	$("#submit").click(function(){
+		console.log($('#sel option:selected').text());
+//		console.log($('#cb').prop('checked'));
+//		var txt = $("#txt").val();
+//		var txt = document.getElementById('txt').value;
+/*		var txt = document.getElementById('txt').value;
+		if($(txt).val() == ''){
+			console.log('빈값입니다.');			
+		}else {
+			console.log('value:' + $(txt).val());		
+		}
+*/		
+	});
+});
+</script>
+
+</body>
+</html>

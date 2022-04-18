@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>로그인</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page01 tC">
+	<div class="mXY">
+		<div class="cscenter">
+			<img src="img/logo.png" alt="로고" />
+		</div>
+		<div class="a01">
+			<div>
+				<span>ID</span>
+				<input type="text" name="" id="mid" value=""/>
+			</div>
+		<form method="post" action="mypage.html"
+							onsubmit="return loginChk()">
+			<div>
+				<span>PW</span>
+				<input type="password" name="" id="mpw" value=""/>
+			</div>
+		<div>
+			<button type="submit">Log in</button>
+		</div>
+		<div class="cscenter">
+			<a href="join01.html">회원가입</a>
+		</div>
+		</form>
+	</div>
+</div>
+<script>
+function loginChk(){
+	let mid = document.getElementById("mid");
+	let mpw = document.getElementById("mpw");
+	if(mid.value == ''){
+		alert("아이디를 입력하세요");
+		mid.focus();
+		return false;
+	}
+	if(mpw.value == ''){
+		alert("비밀번호를 입력하세요");
+		mpw.focus();
+		return false;
+	}
+	console.log("폼안에 전송버튼을 눌렀네요"+(mid.value == ''));
+	return true;
+}
+</script>
+
+</body>
+</html>

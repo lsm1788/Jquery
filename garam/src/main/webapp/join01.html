@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이용약관</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page07"> 
+	<div class="">
+		<div class="jointit w100 tC">
+			<b>약관동의</b>
+		</div>
+		<div class="pd16">
+		<!-- 컨텐츠시작 -->
+			<div>
+				<div class = "tC">
+					<label><input type="checkbox" onclick="chkAuto(this);">전체동의</label>
+				</div>
+			</div>
+			
+			<div class="joinbox">
+				<label for="agree1">서비스 이용약관 동의</label> 
+				<input type="checkbox" id="agree1" name="" value="" required="required">
+
+				<div class="terms">제1조 목적...</div>
+			</div>
+
+			<div class="joinbox">
+				<label for="agree2">개인정보 수집 및 이용 동의</label> 
+				<input type="checkbox" id="agree2" name="" value="" required="required">
+
+				<div class="terms">주식회사...</div>
+			</div>
+
+			<div class="joinbox">
+				<label for="agree3">개인정보 3자 제공 동의</label> 
+				<input type="checkbox" id="agree3" name="" value="" required="required">
+
+				<div class="terms">개인정보 수집, 이용내역...</div>
+			</div>
+			<div>
+				<div class = "joinbtn tC">
+					<button onclick="history.go(-1)">취소</button>
+					<button type="button" onclick="join02()">확인</button>
+				</div>
+			</div>
+		<!-- 컨텐츠종료 -->
+	</div>
+</div>
+<!-- 자바스크립트 코드 -->
+<script>
+let agree1 = document.getElementById("agree1");
+let agree2 = document.getElementById("agree2");
+let agree3 = document.getElementById("agree3");
+
+function join02(){
+	//체크박스 체크여부확인
+	if(!agree1.checked){
+		alert("서비스 이용약관 동의에 체크하세요.");
+		agree1.focus();
+		return;
+	}
+	if(!agree2.checked){
+		alert("개인정보 수집 및 이용 동의에 체크하세요.");
+		agree2.focus();
+		return;
+	}
+	if(!agree3.checked){
+		alert("개인정보 3자 제공 동의에 체크하세요.");
+		agree3.focus();
+		return;
+	}
+	//location.href="join02.html";
+	location.replace("join02.html");
+}
+
+function chkAuto(t){
+	if(t.checked){
+		agree1.checked = true;
+		agree2.checked = true;
+		agree3.checked = true;
+	} else {
+		agree1.checked = false;
+		agree2.checked = false;
+		agree3.checked = false;
+		
+	}
+	console.log("전체선택을 클릭했어요." + t.checked);
+}
+</script>
+</body>
+</html>

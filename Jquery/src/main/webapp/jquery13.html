@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 스크립트 -->
+<!-- <script src="jquery-3.6.0.min (1).js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<p>코로나 조심하세요.</p>
+<p class="p">코로나 조심하세요.</p>
+<p id="p">코로나 조심하세요.</p>
+
+
+<!-- 스크립트 -->
+<script>
+//$("#p").hide();
+$(document).ready(function (){
+	$("p").hide(3000, function(){
+		alert('경고');	
+	});
+});
+</script>
+
+</body>
+</html>
